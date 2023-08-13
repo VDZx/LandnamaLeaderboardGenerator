@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>$DATE$ - Landnama leaderboards (unofficial)</title>
+<link rel="stylesheet" href="style.css" /></head>
+<body><center>
+<font size="7">Daily trial ranking for $DATE$</font><br />
+$ONGOING$<br />
+$DATENAV$<br /><br />
+$COUNTDOWNDIV$
+<div class="hidelink">
+<b>Top 10</b>
+<table border="1">
+$ENTRIES$
+</table>
+<br />
+<b>Other known entries</b><br />
+The following players were previously seen in the top 10 but have since dropped out of the displayed listing. There may be players who achieved better scores on this daily, but who were not listed as the top 10 were already better at that point.
+<table border="1">
+$EXTRAENTRIES$
+</table>
+</div>
+<br />
+Updates every 5 minutes. Last update is on 23:55 UTC; scores submitted afterwards are not listed.<br />
+Last data update: $TIMESTAMP$ UTC<br/>
+<br/><a href="$JSON$">(Download data in JSON format)</a><br />
+Source code can be found <a href="https://github.com/VDZx/LandnamaLeaderboardGenerator">on GitHub</a>.
+
+$COUNTDOWN$
+
+</center></body>
+</html>
