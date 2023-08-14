@@ -61,9 +61,9 @@ namespace LandnamaLeaderboardGenerator
         {
             start -= 1; //#1 is internally index 0
             int entryCount = entries.Length;
-            if (end == -1) end = entryCount;
+            if (end == -1 || end > entryCount) end = entryCount;
             StringBuilder sb = new StringBuilder();
-            if (end - start == 0)
+            if (end - start <= 0)
             {
                 sb.Append("<tr><td>No entries</td></tr>");
             }

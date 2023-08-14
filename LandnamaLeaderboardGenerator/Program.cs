@@ -102,7 +102,7 @@ namespace LandnamaLeaderboardGenerator
                 bool res = PerformUpdate(path, year, month, day);
                 if (res == false && DateTime.UtcNow.Hour > 6) throw new Exception("No entries downloaded! Is something broken?");
                 else Program.Log("Update successful.");
-                if (doCreateSymlinks) Process.Start("ln", "-s \"" + GetDailyFilename(path, year, month, day) + "\" "
+                if (doCreateSymlinks) Process.Start("ln", "-f -s \"" + GetDailyFilename(path, year, month, day) + "\" "
                     + EnsureTrailingSlash(path) + "current.json");
 
             }
@@ -111,7 +111,7 @@ namespace LandnamaLeaderboardGenerator
             {
                 string outputFile = EnsureTrailingSlash(path) + GetYYYYMMDD(year, month, day) + ".html";
                 GenerateDailyPage(GetDailyFilename(path, year, month, day), outputFile, year, month, day);
-                if (doCreateSymlinks) Process.Start("ln", "-s \"" + outputFile + "\" \"" + EnsureTrailingSlash(path) + "current.html\"");
+                if (doCreateSymlinks) Process.Start("ln", "-f -s \"" + outputFile + "\" \"" + EnsureTrailingSlash(path) + "current.html\"");
             }
 
             Program.Log("Done!");
